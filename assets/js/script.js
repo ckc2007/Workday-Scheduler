@@ -27,17 +27,30 @@ $(function () {
 });
 // display military time
 console.log(dayjs().format("H"));
+var currentHourMilitary = dayjs().format("H");
 
 //  display past, present or future class to the time-block div classes
 function displayTimeCss() {
-  var timeBlockEl = $(".time-block");
-  for (let i = 0; i < timeBlockEl.length; i++) {
-
-  }
+  $(".time-block").each(function () {
+    console.log($(this), this.id);
+    if (Number(this.id.split("-")[1]) < Number(currentHourMilitary)) {
+      this.removeClass("future");
+      this.removeClass("present");
+      this.addClass("past");
+    } else if (Number(this.id.split("-")[1]) === Number(currentHourMilitary)) {
+      this.removeClass("future");
+      this.removeClass("past");
+      this.addClass("present");
+    } else {
+      this.removeClass("present");
+      this.removeClass("past");
+      this.addClass("future");
+    }
+  });
 }
 
 console.log($(".time-block")[0].id);
 
-$(".time-block").each(function(){
+$(".time-block").each(function () {
   console.log($(this), this.id);
-})
+});
