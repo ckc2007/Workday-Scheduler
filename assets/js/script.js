@@ -26,13 +26,13 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
 });
 // display military time
-console.log(dayjs().format("H"));
 var currentHourMilitary = dayjs().format("H");
+console.log(currentHourMilitary)
 
 //  display past, present or future class to the time-block div classes
 function displayTimeCss() {
   $(".time-block").each(function () {
-    console.log($(this), this.id);
+    // console.log($(this), this.id);
     if (Number(this.id.split("-")[1]) < Number(currentHourMilitary)) {
       this.removeClass("future");
       this.removeClass("present");
@@ -52,5 +52,5 @@ function displayTimeCss() {
 console.log($(".time-block")[0].id);
 
 $(".time-block").each(function () {
-  console.log($(this), this.id);
+  console.log(this, this.id);
 });
