@@ -35,23 +35,27 @@ $(function () {
   function displayTimeCss() {
     $(".time-block").each(function () {
       // console.log($(this), this.id);
-      if (Number(this.id.split("-")[1]) < Number(currentHourMilitary)) {
-        this.removeClass("future");
-        this.removeClass("present");
-        this.addClass("past");
-      } else if (
-        Number(this.id.split("-")[1]) === Number(currentHourMilitary)
-      ) {
-        this.removeClass("future");
-        this.removeClass("past");
-        this.addClass("present");
+      if (this.id.split("-")[1] < currentHourMilitary) {
+        console.log(this.id.split("-"));
+        $(this).removeClass("future");
+        $(this).removeClass("present");
+        $(this).addClass("past");
+        // console.log($(this), this.id);
+      } else if ($(this)[0].id.split("-")[1] === currentHourMilitary) {
+        $(this).removeClass("future");
+        $(this).removeClass("past");
+        $(this).addClass("present");
+        // console.log($(this), this.id);
       } else {
-        this.removeClass("present");
-        this.removeClass("past");
-        this.addClass("future");
+        $(this).removeClass("present");
+        $(this).removeClass("past");
+        $(this).addClass("future");
+        // console.log($(this), this.id);
       }
     });
   }
+
+  displayTimeCss();
 
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
