@@ -4,6 +4,14 @@
 var today = dayjs();
 $("#currentDay").text(today.format("ddd, MMMM D YYYY, h:mm a"));
 
+var saveBtn = $(".saveBtn");
+
+saveBtn.on("click", function(){
+  // gets the text info in he text area div
+  console.log($(this).parent().children().eq(1).val());
+
+})
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -12,7 +20,7 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  // displayTimeCss()
+  // displayTimeCss() - done below
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
@@ -23,11 +31,13 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+  // Done at the top of the page
   // TODO: Add code to display the current date in the header of the page.
 });
+
 // display military time
 var currentHourMilitary = dayjs().format("H");
-console.log(currentHourMilitary)
+console.log(currentHourMilitary);
 
 //  display past, present or future class to the time-block div classes
 function displayTimeCss() {
@@ -54,3 +64,5 @@ console.log($(".time-block")[0].id);
 $(".time-block").each(function () {
   console.log(this, this.id);
 });
+
+// maybe make a clear button too...
