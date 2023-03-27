@@ -1,11 +1,16 @@
 # hw-05-third-party-api-work-day-scheduler
 
+```
+A calendar application that saves user input and changes its appearance based on the time of day.
+```
+
 ## Description
 
-````
+```
 This is a simple calendar application that saves user input to time-blocked elements - allowing the user to save text information in a display that will dynamically update with the time of day. This dynamic feature is powered by jQuery.
 
 [Day.js](https://day.js.org/en/)
+```
 
 ## User Story
 
@@ -13,7 +18,7 @@ This is a simple calendar application that saves user input to time-blocked elem
 AS A student with a busy schedule
 I WANT to save my schedule to a daily planner
 SO THAT I can see what I have to do today
-````
+```
 
 ## Acceptance Criteria
 
