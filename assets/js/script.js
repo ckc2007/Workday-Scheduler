@@ -6,6 +6,14 @@ var saveBtn = $(".saveBtn");
 var clearBtn = $("#clearBtn");
 
 $(function () {
+  // TODO: Add code to display the current date in the header of the page.
+  var today = dayjs();
+  $("#currentDay").text(today.format("ddd, MMMM D YYYY, h:mm a"));
+
+  // display military time
+  var currentHourMilitary = dayjs().format("H");
+  // console.log(currentHourMilitary);
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -34,7 +42,7 @@ $(function () {
   //  display past, present or future class to the time-block div classes
   function displayTimeCss() {
     $(".time-block").each(function () {
-      // console.log($(this), this.id);
+      console.log($(this), $(this)[0].id.split("-")[1], currentHourMilitary);
       if (this.id.split("-")[1] < currentHourMilitary) {
         console.log(this.id.split("-"));
         $(this).removeClass("future");
@@ -73,14 +81,6 @@ $(function () {
   }
 
   renderSavedInfo();
-  //
-  // TODO: Add code to display the current date in the header of the page.
-  var today = dayjs();
-  $("#currentDay").text(today.format("ddd, MMMM D YYYY, h:mm a"));
-
-  // display military time
-  var currentHourMilitary = dayjs().format("H");
-  // console.log(currentHourMilitary);
 });
 
 // console.log($(".time-block")[0].id);
