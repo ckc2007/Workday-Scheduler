@@ -33,7 +33,7 @@ function renderSavedInfo() {
 
 renderSavedInfo();
 
-$(function () {
+// $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -54,11 +54,11 @@ $(function () {
   //
   // Done at the top of the page
   // TODO: Add code to display the current date in the header of the page.
-});
+// });
 
 // display military time
 var currentHourMilitary = dayjs().format("H");
-console.log(currentHourMilitary);
+// console.log(currentHourMilitary);
 
 //  display past, present or future class to the time-block div classes
 function displayTimeCss() {
@@ -80,13 +80,14 @@ function displayTimeCss() {
   });
 }
 
-console.log($(".time-block")[0].id);
+// console.log($(".time-block")[0].id);
 
-$(".time-block").each(function () {
-  console.log(this, this.id);
-});
+// $(".time-block").each(function () {
+//   console.log(this, this.id);
+// });
 
 // maybe make a clear button too...
 clearBtn.on("click", function () {
   localStorage.clear();
+  location.reload();
 });
