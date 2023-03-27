@@ -8,7 +8,7 @@ var clearBtn = $("#clearBtn");
 $(function () {
   // TODO: Add code to display the current date in the header of the page.
   var today = dayjs();
-  $("#currentDay").text(today.format("ddd, MMMM D YYYY, h:mm a"));
+  $("#currentDay").text(today.format("dddd, MMMM D YYYY, h:mm a"));
 
   // display military time
   var currentHourMilitary = dayjs().format("H");
@@ -42,23 +42,23 @@ $(function () {
   //  display past, present or future class to the time-block div classes
   function displayTimeCss() {
     $(".time-block").each(function () {
-      console.log($(this), +$(this)[0].id.split("-")[1], +currentHourMilitary);
+      // console.log($(this), +$(this)[0].id.split("-")[1], +currentHourMilitary);
       if (+$(this)[0].id.split("-")[1] < +currentHourMilitary) {
-        console.log($(this)[0].id.split("-")[1]);
+        // console.log($(this)[0].id.split("-")[1]);
         $(this).removeClass("future");
         $(this).removeClass("present");
         $(this).addClass("past");
-        console.log($(this), this.id);
+        // console.log($(this), this.id);
       } else if (+$(this)[0].id.split("-")[1] === +currentHourMilitary) {
         $(this).removeClass("future");
         $(this).removeClass("past");
         $(this).addClass("present");
-        console.log($(this), this.id);
+        // console.log($(this), this.id);
       } else {
         $(this).removeClass("present");
         $(this).removeClass("past");
         $(this).addClass("future");
-        console.log($(this), this.id);
+        // console.log($(this), this.id);
       }
     });
   }
