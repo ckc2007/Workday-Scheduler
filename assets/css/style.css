@@ -58,10 +58,15 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-#clearBtn {
+.importantBtn {
   display: block;
   margin: 20px;
   background-color: pink;
   color: black;
   font-weight: bold;
+}
+
+.btn:hover {
+  background-color: purple;
+  font-size: 150%;
 }

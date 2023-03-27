@@ -81,6 +81,12 @@ $(function () {
   }
 
   renderSavedInfo();
+
+  // maybe make a clear button too...
+clearBtn.on("click", function () {
+  localStorage.clear();
+  location.reload();
+});
 });
 
 // console.log($(".time-block")[0].id);
@@ -89,8 +95,4 @@ $(function () {
 //   console.log(this, this.id);
 // });
 
-// maybe make a clear button too...
-clearBtn.on("click", function () {
-  localStorage.clear();
-  location.reload();
-});
+
