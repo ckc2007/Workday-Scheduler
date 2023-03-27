@@ -5,8 +5,6 @@
 var saveBtn = $(".saveBtn");
 var clearBtn = $("#clearBtn");
 
-// renderSavedInfo();
-
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -19,8 +17,8 @@ $(function () {
     var textEl = $(this).parent().children().eq(1).val();
     // debug here
     var keyEl = $(this).parent()[0].id;
-    console.log(keyEl);
-    console.log(textEl);
+    // console.log(keyEl);
+    // console.log(textEl);
     localStorage.setItem(keyEl, textEl);
     // retrieve the data stored at the key - which is the id
     // var entry9 = localStorage.getItem("hour-9");
@@ -54,7 +52,7 @@ $(function () {
       }
     });
   }
-  
+
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
@@ -65,14 +63,13 @@ $(function () {
       $(this)
         .children()
         .eq(1)
-        // debug here - i need to pass the key which is the id - add [0] every time!
+        // debug here - FIXED - i need to pass the key which is the id - add [0] every time!
         .text(localStorage.getItem($(this)[0].id));
     });
   }
 
   renderSavedInfo();
   //
-  // Done at the top of the page
   // TODO: Add code to display the current date in the header of the page.
   var today = dayjs();
   $("#currentDay").text(today.format("ddd, MMMM D YYYY, h:mm a"));
