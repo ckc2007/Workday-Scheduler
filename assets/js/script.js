@@ -17,10 +17,10 @@ $(function () {
   $(document).ready(function () {
     var timeBar = $("#time-bar");
     var interval = setInterval(function () {
-      var top = parseInt(timeBar.css("top")) || 0;
-      top += 2;
+      var top = parseInt(timeBar.css("top")) || 18;
+      top += 20;
       if (top >= $(window).height()) {
-        top = 0;
+        top = 18;
       }
       timeBar.css("top", top + "px");
     }, 60000); // 1 minute interval
