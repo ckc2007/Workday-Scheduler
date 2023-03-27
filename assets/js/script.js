@@ -5,6 +5,7 @@ var today = dayjs();
 $("#currentDay").text(today.format("ddd, MMMM D YYYY, h:mm a"));
 
 var saveBtn = $(".saveBtn");
+var clearBtn = $("#clearBtn");
 
 saveBtn.on("click", function () {
   // gets the text info in he text area div
@@ -19,7 +20,7 @@ saveBtn.on("click", function () {
   // console.log(entry9)
 });
 
-// render the saved info 
+// render the saved info
 function renderSavedInfo() {
   $(".time-block").each(function () {
     $(this)
@@ -86,3 +87,6 @@ $(".time-block").each(function () {
 });
 
 // maybe make a clear button too...
+clearBtn.on("click", function () {
+  localStorage.clear();
+});
