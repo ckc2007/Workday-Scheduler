@@ -6,11 +6,14 @@ $("#currentDay").text(today.format("ddd, MMMM D YYYY, h:mm a"));
 
 var saveBtn = $(".saveBtn");
 
-saveBtn.on("click", function(){
+saveBtn.on("click", function () {
   // gets the text info in he text area div
-  console.log($(this).parent().children().eq(1).val());
-
-})
+  var textEl = $(this).parent().children().eq(1).val();
+  // debug here
+  var keyEl = $(this).parent().id;
+  console.log(keyEl);
+  console.log(textEl);
+});
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
