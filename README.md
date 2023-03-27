@@ -8,9 +8,8 @@ A calendar application that saves user input and changes its appearance based on
 
 ```
 This is a simple calendar application that saves user input to time-blocked elements - allowing the user to save text information in a display that will dynamically update with the time of day. This dynamic feature is powered by jQuery.
-
-[Day.js](https://day.js.org/en/)
 ```
+[Day.js](https://day.js.org/en/)
 
 ## User Story
 
@@ -42,18 +41,19 @@ THEN the saved events persist
 
 ```
 Here is the link to the live site:
+```
 [https://ckc2007.github.io/hw-05-third-party-api-work-day-scheduler/]
 
+```
 The following images show the deployed site at different times of day:
-
+```
 ![demo page](./assets/images/hw-05-deployed.png)
 ![demo page](./assets/images/hw-05-deployed-page-screenshot.png)
-```
 
 ## Additional Features
 
 ```
-Added a 'Clear All' button at the bottom left of the planner to allow the user to reset the conents of the planner
+Added a 'Clear All' button at the bottom left of the planner to allow the user to reset the contents of the planner.
 ```
 
 ## Future Features
