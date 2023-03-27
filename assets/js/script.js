@@ -10,10 +10,27 @@ saveBtn.on("click", function () {
   // gets the text info in he text area div
   var textEl = $(this).parent().children().eq(1).val();
   // debug here
-  var keyEl = $(this).parent().id;
+  var keyEl = $(this).parent()[0].id;
   console.log(keyEl);
   console.log(textEl);
+  localStorage.setItem(keyEl, textEl);
+  // retrieve the data stored at the key - which is the id
+  // var entry9 = localStorage.getItem("hour-9");
+  // console.log(entry9)
 });
+
+// render the saved info 
+function renderSavedInfo() {
+  $(".time-block").each(function () {
+    $(this)
+      .children()
+      .eq(1)
+      // debug here - i need to pass the key which is the id - add [0] every time!
+      .text(localStorage.getItem($(this)[0].id));
+  });
+}
+
+renderSavedInfo();
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
