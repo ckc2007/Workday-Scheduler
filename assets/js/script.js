@@ -14,6 +14,22 @@ $(function () {
   var currentHourMilitary = dayjs().format("H");
   // console.log(currentHourMilitary);
 
+  $(document).ready(function () {
+    var timeBar = $("#time-bar");
+    var interval = setInterval(function () {
+      var top = parseInt(timeBar.css("top")) || 0;
+      top += 2;
+      if (top >= $(window).height()) {
+        top = 0;
+      }
+      timeBar.css("top", top + "px");
+    }, 60000); // 1 minute interval
+
+    setTimeout(function () {
+      clearInterval(interval);
+    }, 853 * 60000); // stop after 853 minutes
+  });
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -83,10 +99,10 @@ $(function () {
   renderSavedInfo();
 
   // maybe make a clear button too...
-clearBtn.on("click", function () {
-  localStorage.clear();
-  location.reload();
-});
+  clearBtn.on("click", function () {
+    localStorage.clear();
+    location.reload();
+  });
 });
 
 // console.log($(".time-block")[0].id);
@@ -94,5 +110,3 @@ clearBtn.on("click", function () {
 // $(".time-block").each(function () {
 //   console.log(this, this.id);
 // });
-
-
