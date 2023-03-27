@@ -14,21 +14,23 @@ $(function () {
   var currentHourMilitary = dayjs().format("H");
   // console.log(currentHourMilitary);
 
-  $(document).ready(function () {
-    var timeBar = $("#time-bar");
-    var interval = setInterval(function () {
-      var top = parseInt(timeBar.css("top")) || 18;
-      top += 20;
-      if (top >= $(window).height()) {
-        top = 18;
-      }
-      timeBar.css("top", top + "px");
-    }, 60000); // 1 minute interval
+  // the following is the experimental time bar - to do:
+  // activate at specific time of day, make sure it reloads to current position if the page reloads.
+  // $(document).ready(function () {
+  //   var timeBar = $("#time-bar");
+  //   var interval = setInterval(function () {
+  //     var top = parseInt(timeBar.css("top")) || 18;
+  //     top += 20;
+  //     if (top >= $(window).height()) {
+  //       top = 18;
+  //     }
+  //     timeBar.css("top", top + "px");
+  //   }, 60000); // 1 minute interval
 
-    setTimeout(function () {
-      clearInterval(interval);
-    }, 853 * 60000); // stop after 853 minutes
-  });
+  //   setTimeout(function () {
+  //     clearInterval(interval);
+  //   }, 853 * 60000); // stop after 853 minutes
+  // });
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
