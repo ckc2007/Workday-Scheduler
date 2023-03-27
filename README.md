@@ -43,3 +43,16 @@ The following images show the deployed site at different times of day:
 
 ![demo page](./assets/images/hw-05-deployed.png)
 ![demo page](./assets/images/hw-05-deployed-page-screenshot.png)
+```
+
+## Additional Features
+
+```
+Added a 'Clear All' button at the bottom left of the planner to allow the user to reset the conents of the planner
+```
+
+## Future Features
+
+```
+A dotted line that will scroll down through the calendar marking the time increments in real time, so the user can see a more specific time of day
+```
