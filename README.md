@@ -1,4 +1,4 @@
-# hw-05-third-party-api-work-day-scheduler
+# Workday Scheduler
 
 ```
 A calendar application that saves user input and changes its appearance based on the time of day.
