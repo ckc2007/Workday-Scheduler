@@ -42,7 +42,7 @@ THEN the saved events persist
 ```
 Here is the link to the live site:
 ```
-[https://ckc2007.github.io/hw-05-third-party-api-work-day-scheduler/]
+[https://ckc2007.github.io/Workday-Scheduler/]
 
 ```
 The following images show the deployed site at different times of day:
